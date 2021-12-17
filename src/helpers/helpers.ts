@@ -1,4 +1,4 @@
-export const dateTimeFormat = (timeMs) => {
+export const dateTimeFormat = (timeMs: number) => {
   return Intl.DateTimeFormat("ru-RU", {
     year: "numeric",
     month: "numeric",
@@ -9,6 +9,6 @@ export const dateTimeFormat = (timeMs) => {
   }).format(new Date(timeMs));
 };
 
-export const numberFormat = (number) => {
+export const numberFormat = (number: number) => {
   return Intl.NumberFormat("ru-RU").format(number);
 };

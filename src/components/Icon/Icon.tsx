@@ -1,6 +1,10 @@
 import { icons } from "./icons";
 
-const Icon = ({ name }) => {
+type TIconProps = {
+  name: string;
+};
+
+const Icon = ({ name }: TIconProps) => {
   return <>{icons[name] ? icons[name] : null}</>;
 };
 

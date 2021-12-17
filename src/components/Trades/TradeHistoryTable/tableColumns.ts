@@ -1,3 +1,5 @@
+const sort = (a: number, b: number): number => a - b;
+
 export const columns = [
   {
     title: "№",
@@ -5,7 +7,7 @@ export const columns = [
     align: "left",
     width: 90,
     sortable: true,
-    sortFn: (a, b) => a - b,
+    sortFn: sort,
     order: "DESC",
   },
   {
@@ -22,14 +24,14 @@ export const columns = [
     title: "Количество",
     accessor: "quantity",
     sortable: true,
-    sortFn: (a, b) => a - b,
+    sortFn: sort,
     align: "right",
   },
   {
     title: "на сумму",
     accessor: "amount",
     sortable: true,
-    sortFn: (a, b) => a - b,
+    sortFn: sort,
     align: "right",
   },
   {

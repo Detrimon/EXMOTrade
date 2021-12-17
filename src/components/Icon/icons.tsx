@@ -6,7 +6,11 @@ import { ReactComponent as DownIcon } from "../../icons/down.svg";
 
 import { ReactComponent as Exchange } from "../../icons/exchange.svg";
 
-export const icons = {
+export type TIcons = {
+  [value: string]: JSX.Element;
+};
+
+export const icons: TIcons = {
   BCH: <CC.BCH />,
   BTC: <CC.BTC />,
   DAI: <CC.DAI />,
