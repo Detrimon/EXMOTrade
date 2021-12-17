@@ -28,3 +28,7 @@ with the following content:
 REACT_APP_EXMO_WS_BASE_URL=wss://ws-api.exmo.com:443/v1
 REACT_APP_EXMO_WS_PUBLIC_URL=$REACT_APP_EXMO_WS_BASE_URL/public
 REACT_APP_EXMO_WS_PRIVATE_URL=$REACT_APP_EXMO_WS_BASE_URL/private
+
+![image](https://user-images.githubusercontent.com/49167999/146498737-09e3f2ea-062b-417a-9865-9085591f9697.png)
+
+![image](https://user-images.githubusercontent.com/49167999/146498816-93ee4f1d-9eb5-4b4d-a556-2dcaeb96a17e.png)
