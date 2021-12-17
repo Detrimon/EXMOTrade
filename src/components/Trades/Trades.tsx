@@ -13,8 +13,19 @@ import TradeModal from "./TradeModal";
 import TradeHistoryTable from "./TradeHistoryTable";
 import TradeButton from "./TradeButton";
 import Icon from "../Icon";
+import {
+  IEXMOWebsocket,
+  TSpotTradesItem,
+  UTradeTypes,
+  TCurrency,
+} from "../../types/types";
 
-const initialTrades = {
+type TInitialTrades = {
+  buy: TSpotTradesItem[] | [];
+  sell: TSpotTradesItem[] | [];
+};
+
+const initialTrades: TInitialTrades = {
   buy: [],
   sell: [],
 };
@@ -23,16 +34,16 @@ let prevCryptoCurrency = CRYPTO_CURRENCY[0];
 let prevRealCurrency = REAL_CURRENCIES[0];
 
 const Trades = () => {
-  const [socketUrl] = useState(EXMO_WS_PUBLIC_URL);
+  const [socketUrl] = useState<string>(EXMO_WS_PUBLIC_URL || "");
   const [oTrades, setTrades] = useState(initialTrades);
   const [chosenCryptoCurrency, setChosenCryptoCurrency] =
-    useState(prevCryptoCurrency);
+    useState<TCurrency>(prevCryptoCurrency);
   const [chosenRealCurrency, setChosenRealCurrency] =
-    useState(prevRealCurrency);
-  const [error, setError] = useState(null);
+    useState<TCurrency>(prevRealCurrency);
+  const [error, setError] = useState<IEXMOWebsocket | null>(null);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [chosenHistory, setChosenHistory] = useState();
+  const [chosenHistory, setChosenHistory] = useState<UTradeTypes>("buy");
 
   const handleTradeButtonClick = useCallback(
     (type) => {
@@ -64,11 +75,11 @@ const Trades = () => {
   const oLastMessage = useMemo(
     () => lastMessage?.data && JSON.parse(lastMessage?.data),
     [lastMessage]
-  );
+  ) as IEXMOWebsocket;
 
   const aLastMessageData = useMemo(() => {
     if (oLastMessage && oLastMessage.event === "update") {
-      return oLastMessage.data;
+      return oLastMessage.data || [];
     }
     if (oLastMessage?.event === "error") {
       setError(oLastMessage);
@@ -97,17 +108,14 @@ const Trades = () => {
     const oTradesTemp = _.cloneDeep(oTrades);
 
     aLastMessageData.forEach((item) => {
-      const tempItem = _.cloneDeep(item);
-      tempItem.cryptoCurrency = chosenCryptoCurrency;
-      tempItem.realCurrency = chosenRealCurrency;
-      tempItem.price = parseFloat(item.price);
+      const tempItem: TSpotTradesItem = {
+        ..._.cloneDeep(item),
+        cryptoCurrency: chosenCryptoCurrency,
+        realCurrency: chosenRealCurrency,
+        price: parseFloat(item.price),
+      };
 
-      if (item.type === "sell") {
-        oTradesTemp.sell.push(tempItem);
-      }
-      if (item.type === "buy") {
-        oTradesTemp.buy.push(tempItem);
-      }
+      oTradesTemp[item.type] = [...oTradesTemp[item.type], tempItem];
     });
 
     setTrades(oTradesTemp);
@@ -131,14 +139,18 @@ const Trades = () => {
             items={CRYPTO_CURRENCY}
             value={chosenCryptoCurrency}
             className={styles.select_currency_item}
-            onChange={({ value }) => setChosenCryptoCurrency(value)}
+            onChange={({ value }) =>
+              setChosenCryptoCurrency(value || prevCryptoCurrency)
+            }
           />
           <Icon name="exchange" />
           <Select
             items={REAL_CURRENCIES}
             value={chosenRealCurrency}
             className={styles.select_currency_item}
-            onChange={({ value }) => setChosenRealCurrency(value)}
+            onChange={({ value }) =>
+              setChosenRealCurrency(value || prevRealCurrency)
+            }
           />
         </div>
 

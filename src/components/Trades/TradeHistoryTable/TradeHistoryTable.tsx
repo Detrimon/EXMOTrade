@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { Table } from "@consta/uikit/Table";
+import { Table, TableColumn } from "@consta/uikit/Table";
 import { Text } from "@consta/uikit/Text";
 import { columns } from "./tableColumns";
 import styles from "./TradeHistoryTable.module.css";
@@ -9,12 +9,16 @@ import Separator from "../../Separator";
 import { dateTimeFormat } from "../../../helpers/helpers";
 import { TIMEMS_1000 } from "../../../constants/constants";
 import { MSG_NO_DATA } from "../../../constants/messages";
+import {
+  TTradeHistoryTableRow,
+  TTradeHistoryTableProps,
+} from "../../../types/types";
 
-const TradeHistoryTable = ({ history = [] }) => {
+const TradeHistoryTable = ({ history }: TTradeHistoryTableProps) => {
   const rows = useMemo(
     () =>
       history.map((item, index) => ({
-        id: index + 1,
+        id: (index + 1).toString(),
         pair: `${item.cryptoCurrency.label}/${item.realCurrency.label}`,
         price: (
           <Text size="s" style={{ whiteSpace: "nowrap" }}>
@@ -32,10 +36,11 @@ const TradeHistoryTable = ({ history = [] }) => {
         datetime: dateTimeFormat(item.date * TIMEMS_1000),
       })),
     [history]
-  );
+  ) as TTradeHistoryTableRow[];
+
   return (
     <Table
-      columns={columns}
+      columns={columns as TableColumn<TTradeHistoryTableRow>[]}
       rows={rows}
       stickyHeader={true}
       zebraStriped="odd"

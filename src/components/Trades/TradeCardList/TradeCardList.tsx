@@ -1,11 +1,12 @@
 import { Text } from "@consta/uikit/Text";
 import { MAX_CARDS_PER_LIST } from "../../../constants/constants";
 import { numberFormat } from "../../../helpers/helpers";
+import { TTradeCardListProps } from "../../../types/types";
 import TradeCard from "../TradeCard";
 
 import styles from "./TradeCardList.module.css";
 
-const TradeCardList = ({ aTrades, type, renderBtn }) => {
+const TradeCardList = ({ aTrades, type, renderBtn }: TTradeCardListProps) => {
   const cards = aTrades
     .slice(
       aTrades.length - MAX_CARDS_PER_LIST - 1 > 0
@@ -31,7 +32,6 @@ const TradeCardList = ({ aTrades, type, renderBtn }) => {
           quantity={item?.quantity}
           type={item?.type}
           pair={[item?.cryptoCurrency, item?.realCurrency]}
-          currency={item?.currency}
         />
       );
     })
