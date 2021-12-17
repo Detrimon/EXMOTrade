@@ -1,4 +1,4 @@
-# EXMO Trade Tiles in a real time.
+# Real-time EXMO Trade tiles.
 
 This project was invented by myself and it was created for my own portfolio and you most likely can't be able
 to find a use for it in real life. I'm not a cryptocurrency trader :)
