@@ -1,7 +1,9 @@
 import { Modal } from "@consta/uikit/Modal";
+import { TTradeModalProps } from "../../../types/types";
+
 import styles from "./TradeModal.module.css";
 
-const TradeModal = ({ children, isOpen, onEsc }) => {
+const TradeModal = ({ children, isOpen, onEsc }: TTradeModalProps) => {
   return (
     <Modal
       className={styles.container}

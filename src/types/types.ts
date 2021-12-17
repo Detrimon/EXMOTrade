@@ -11,3 +11,9 @@ export type TTradeCardProps = {
   amount: string;
   timeInSeconds: number;
 };
+
+export type TTradeModalProps = {
+  children: JSX.Element;
+  isOpen: boolean;
+  onEsc: () => void;
+};
