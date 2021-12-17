@@ -1,0 +1,21 @@
+.trades_list {
+  width: 50%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+.trades_list_header {
+  display: flex;
+  justify-content: space-around;
+}
+
+.list_header_text {
+}
+
+.list_header_price {
+}
+
+.list_header_default {
+}

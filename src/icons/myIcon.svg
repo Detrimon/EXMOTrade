@@ -1,0 +1,30 @@
+<svg
+  style="stroke: #e24667; fill: #e24667"
+  width="600"
+  height="600"
+  viewbox="0 0 600 600"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- <g stroke-width="1" stroke="green">
+    <line x1="100" y1="0" x2="100" y2="600" />
+    <line x1="200" y1="0" x2="200" y2="600" />
+    <line x1="300" y1="0" x2="300" y2="600" />
+    <line x1="400" y1="0" x2="400" y2="600" />
+    <line x1="500" y1="0" x2="500" y2="600" />
+
+    <line x1="0" y1="100" x2="600" y2="100" />
+    <line x1="0" y1="200" x2="600" y2="200" />
+    <line x1="0" y1="300" x2="600" y2="300" />
+    <line x1="0" y1="400" x2="600" y2="400" />
+    <line x1="0" y1="500" x2="600" y2="500" />
+  </g> -->
+  <g>
+    <path d="M 40 -50 L 385 450" stroke-width="180" />
+    <path
+      d="M 350 175 l 200 200 l -400 0 Z"
+      transform="rotate(145 350 400)"
+      stroke-width="10"
+      stroke-linejoin="round"
+    />
+  </g>
+</svg>

@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  flex-wrap: no-wrap;
+  flex: 1 1 50%;
+
+  max-width: 1200px;
+  min-width: 600px;
+  margin: 0 auto;
+}
+
+.select_currency_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.select_currency_item {
+  padding: 10px;
+  width: 100px;
+}
+
+.trades_list {
+  width: 50%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+/*
+.trades_list_header {
+  display: flex;
+  justify-content: space-around;
+}
+
+.list_header_text {
+}
+
+.list_header_price {
+}
+
+.list_header_default {
+} */

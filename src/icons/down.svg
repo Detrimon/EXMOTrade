@@ -1,0 +1,17 @@
+<svg
+  style="stroke: #e24667; fill: #e24667"
+  width="13"
+  height="13"
+  viewbox="0 0 600 600"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g>
+    <path d="M 40 -50 L 385 450" stroke-width="180" />
+    <path
+      d="M 350 175 l 200 200 l -400 0 Z"
+      transform="rotate(145 350 400)"
+      stroke-width="10"
+      stroke-linejoin="round"
+    />
+  </g>
+</svg>

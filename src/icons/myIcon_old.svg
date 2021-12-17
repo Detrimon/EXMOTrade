@@ -1,0 +1,50 @@
+<svg
+  style="stroke-width: 0; fill: #f0c95f"
+  width="19"
+  height="19"
+  viewbox="0 0 600 600"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <circle cx="300" cy="300" r="300" />
+  <circle
+    cx="300"
+    cy="300"
+    r="286"
+    stroke-width="4"
+    stroke="#f9f8f8"
+    fill="transparent"
+  />
+  <circle
+    cx="300"
+    cy="300"
+    r="270"
+    stroke-width="4"
+    stroke="#f9f8f8"
+    fill="transparent"
+  />
+
+  <!-- <g stroke-width="1" stroke="green">
+    <line x1="100" y1="0" x2="100" y2="600" />
+    <line x1="200" y1="0" x2="200" y2="600" />
+    <line x1="300" y1="0" x2="300" y2="600" />
+    <line x1="400" y1="0" x2="400" y2="600" />
+    <line x1="500" y1="0" x2="500" y2="600" />
+
+    <line x1="0" y1="100" x2="600" y2="100" />
+    <line x1="0" y1="200" x2="600" y2="200" />
+    <line x1="0" y1="300" x2="600" y2="300" />
+    <line x1="0" y1="400" x2="600" y2="400" />
+    <line x1="0" y1="500" x2="600" y2="500" />
+  </g> -->
+
+  <text
+    x="150"
+    y="457"
+    font-size="500"
+    fill="#fff"
+    textLength="300"
+    lengthAdjust="spacingAndGlyphs"
+  >
+    ⟠
+  </text>
+</svg>

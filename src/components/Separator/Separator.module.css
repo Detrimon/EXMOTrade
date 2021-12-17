@@ -1,0 +1,23 @@
+.container {
+  display: inline-block;
+}
+
+.sizeXS {
+  width: 1px;
+}
+
+.sizeS {
+  width: 3px;
+}
+
+.sizeM {
+  width: 5px;
+}
+
+.sizeL {
+  width: 7px;
+}
+
+.sizeXL {
+  width: 9px;
+}
