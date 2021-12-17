@@ -8,6 +8,12 @@ import { dateTimeFormat, numberFormat } from "../../../helpers/helpers";
 import { TIMEMS_1000 } from "../../../constants/constants";
 import { TIP_TRADE_ID } from "../../../constants/tooltips";
 import { LABEL_TXT_AMOUNT } from "../../../constants/labels";
+import { TTradeCardProps } from "../../../types/types";
+
+const TRADE_TYPES = {
+  sell: "продано",
+  buy: "куплено",
+} as const;
 
 const TradeCard = ({
   type,
@@ -18,17 +24,10 @@ const TradeCard = ({
   quantity,
   amount,
   timeInSeconds,
-}) => {
+}: TTradeCardProps) => {
   const [cryptoCurrency, realCurrency] = pair;
 
-  const tradeType = useMemo(
-    () =>
-      ({
-        sell: "продано",
-        buy: "куплено",
-      }[type]),
-    [type]
-  );
+  const tradeType = useMemo(() => TRADE_TYPES[type], [type]);
 
   return (
     <Card
@@ -72,7 +71,7 @@ const TradeCard = ({
           <Text
             as="p"
             size="s"
-            weight="normal"
+            weight="regular"
             className={styles.quantity_amount_header}
           >
             {tradeType}

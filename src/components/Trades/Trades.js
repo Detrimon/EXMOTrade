@@ -100,6 +100,7 @@ const Trades = () => {
       const tempItem = _.cloneDeep(item);
       tempItem.cryptoCurrency = chosenCryptoCurrency;
       tempItem.realCurrency = chosenRealCurrency;
+      tempItem.price = parseFloat(item.price);
 
       if (item.type === "sell") {
         oTradesTemp.sell.push(tempItem);
